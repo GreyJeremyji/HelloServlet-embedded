@@ -12,15 +12,15 @@ import java.util.Map;
 
 
 @WebServlet(urlPatterns = "/signin")
-public class SignInServlet extends HttpServlet{
+public class SignInServlet extends HttpServlet{  //来一个请求
     private Map<String,String> users = Map.of("bob","bob123","alice","alice123","tom","tomcat");
 
-
+    //public String test = "test123456";
     @Override
     protected void doGet(HttpServletRequest req,HttpServletResponse resp) throws ServletException,IOException{
         resp.setContentType("text/html");
         PrintWriter pw = resp.getWriter();
-
+        this.test=this.test+"a";
         pw.write("<h1>Sign In</h1>");
         pw.write("<form action=\"/signin\" method=\"post\">");
         pw.write("<p>Username: <input name=\"username\"></p>");
